@@ -7,14 +7,30 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors:{
+      mainBackground:'#FBFBFB',
+      regalGray:'#7A7A7A',
+      dark:'#161616',
+      main:'#E33A6D',
+      shadow:'#1616161A',
+      separator:'#D1D1D1',
+    },
+    fontFamily: {
+      sans: ['var(--font-openSans)']
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontSize: {
+        sm: ['14px', '18px'],
       },
+      spacing:{
+        4.5: '18px'
+      },
+      screens:{
+        md: '880px'
+      }
     },
   },
   plugins: [],
 };
+
 export default config;
