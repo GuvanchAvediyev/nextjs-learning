@@ -7,12 +7,18 @@
         height: 100%;
         width: 100%;
     }
+    body{
+        overflow-x: hidden;
+    }
+
 }
-
-
 
 @layer utilities{
     .bottom-box-shadow{
         box-shadow: 0 2px 10px 0 theme('colors.shadow');
+    }
+    .rounded-box-shadow{
+        box-shadow: 0 0 10px 0 theme('colors.shadow');
+
     }
 }

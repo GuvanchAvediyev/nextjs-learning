@@ -14,6 +14,7 @@ const config: Config = {
       main:'#E33A6D',
       shadow:'#1616161A',
       separator:'#D1D1D1',
+      deepWhite:'#eeeeee',
     },
     fontFamily: {
       sans: ['var(--font-openSans)']
@@ -23,7 +24,10 @@ const config: Config = {
         sm: ['14px', '18px'],
       },
       spacing:{
-        4.5: '18px'
+        4.5: '18px',
+        10: '40px',
+        30: '120px',
+        115:'460px'
       },
       screens:{
         md: '880px'
