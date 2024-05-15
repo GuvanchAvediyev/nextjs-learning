@@ -1,14 +1,13 @@
 import { useEffect } from "react";
 
 export function useBodyScrollLock(isLock: boolean, position: 'X'|'Y') {
-
-  const PREPARED_OVERFLOW = `overflow${position ?? ''}` as any
+  const preparedOverflow = `overflow${position ?? ''}` as any
 
   useEffect(() => {
-    document.body.style[PREPARED_OVERFLOW] = isLock ? 'hidden' : 'visible'
+    document.body.style[preparedOverflow] = isLock ? 'hidden' : 'visible'
 
     return () => {
-      document.body.style[PREPARED_OVERFLOW] = 'visible'
+      document.body.style[preparedOverflow] = 'visible'
     }
-  }, [PREPARED_OVERFLOW, isLock])
+  }, [preparedOverflow, isLock])
 }

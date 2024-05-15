@@ -4,10 +4,10 @@ import { usePathname } from 'next/navigation'
 import classNames from 'classnames'
 
 type Props = {
-  customClass?: string
-} & PropsWithChildren & LinkProps
+  className?: string
+}
 
-export const CustomLink:FC<Props>=({children, href, customClass, ...rest})=>{
+export const CustomLink:FC<PropsWithChildren<Props> & LinkProps >=({children, href, className, ...rest})=>{
   const pathname = usePathname();
   const active = href === '/' ? pathname === href : pathname.startsWith(href as string)
 
@@ -15,8 +15,9 @@ export const CustomLink:FC<Props>=({children, href, customClass, ...rest})=>{
     <Link
       className={
         classNames(
-          'text-base relative text-regalGray w-max hover:text-dark',
-          customClass,
+          'text-base relative text-regalGray w-max',
+          'hover:text-dark',
+          className,
           {
             'before:absolute before:bottom-0 before:border-b-4 before:border-solid before:border-main before:h-1 before:w-full': active
           }

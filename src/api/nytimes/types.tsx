@@ -1,13 +1,13 @@
-export type TTopStory={
+export type TopStory={
   title:string
   section:string
   abstract:string
   published_date:string
-  multimedia:TMultiMedia[]
+  multimedia:MultiMedia[]
   uri:string
 }
 
-type TMultiMedia={
+type MultiMedia={
   caption: string
   copyright: string
   format: string
