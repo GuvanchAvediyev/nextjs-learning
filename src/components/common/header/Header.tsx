@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { DesktopNavbar } from '@/components/common/header/components/DesktopNavbar'
 import { Drawer } from '@/components/common/Drawer'
 import { CustomLink } from '@/components/common/CustomLink'
+import { useBodyScrollLock } from "@/hooks/useBodyLock";
 import Logo from '@/assets/icons/logo.svg'
 import CrossIcon from '@/assets/icons/cross.svg'
 import BurgerIcon from '@/assets/icons/burger.svg'
@@ -14,29 +15,31 @@ export const Header=()=>{
 
   const toggleMenu=()=>setIsOpenModal(prevState => !prevState)
 
+  useBodyScrollLock(isOpenModal, 'Y')
+
   return(
     <>
-    <header className={classNames(
-      'bottom-box-shadow flex justify-between items-center p-4 relative z-10',
-      'md:px-20 md:py-0'
-    )}>
+      <header className={classNames(
+        'bottom-box-shadow flex justify-between items-center p-4 relative z-10',
+        'md:px-20 md:py-0'
+      )}>
 
-      <Link href='/'>
-        <Logo />
-      </Link>
+        <Link href='/'>
+          <Logo />
+        </Link>
 
-      <button
-        onClick={toggleMenu}
-        className={classNames(
-          'block',
-          'md:hidden'
-        )}
-      >
-        {isOpenModal ? <CrossIcon /> : <BurgerIcon />}
-      </button>
+        <button
+          onClick={toggleMenu}
+          className={classNames(
+            'block',
+            'md:hidden'
+          )}
+        >
+          {isOpenModal ? <CrossIcon /> : <BurgerIcon />}
+        </button>
 
-      <DesktopNavbar />
-    </header>
+        <DesktopNavbar />
+      </header>
       <Drawer open={isOpenModal}>
         <div className='flex flex-col gap-y-5'>
           <CustomLink customClass='pb-1' href='/'>Home</CustomLink>

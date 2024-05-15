@@ -3,7 +3,6 @@ import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import classNames from 'classnames'
 
-
 type Props = {
   customClass?: string
 } & PropsWithChildren & LinkProps

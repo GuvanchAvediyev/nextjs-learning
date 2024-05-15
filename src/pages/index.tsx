@@ -1,13 +1,19 @@
-import { Inter } from "next/font/google";
+import {dehydrate} from "@tanstack/react-query";
+import { Home } from "@/components/home/Home";
+import { prefetchTopStories } from "@/api/nytimes/queries";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main
-      className={`h-full ${inter.className}`}
-    >
-     Home
-    </main>
-  );
+   <Home/>
+  )
+}
+
+export const getServerSideProps = async ()=>{
+  const queryClient = await prefetchTopStories()
+
+  return {
+    props:{
+      dehydratedState: dehydrate(queryClient)
+    }
+  }
 }
