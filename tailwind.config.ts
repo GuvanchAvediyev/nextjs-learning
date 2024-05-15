@@ -17,16 +17,18 @@ const config: Config = {
       deepWhite:'#eeeeee',
     },
     fontFamily: {
-      sans: ['var(--font-openSans)']
+      sans: ['var(--font-openSans)'],
     },
     extend: {
       fontSize: {
         sm: ['14px', '18px'],
+        '3xl':['28px', '38px']
       },
       spacing:{
         4.5: '18px',
         10: '40px',
         30: '120px',
+        45: '180px',
         115:'460px'
       },
       screens:{

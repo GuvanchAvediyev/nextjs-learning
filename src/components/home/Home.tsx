@@ -17,15 +17,15 @@ export const Home=()=>{
       'md:py-10 md:px-30'
     )}>
       {
-        data.map(({multimedia, published_date, title, section, abstract,uri })=>
+        data.map(({multimedia, published_date, title, section, abstract,url })=>
           <Card
             key={title}
             category={section}
             date={published_date}
             title={title}
             description={abstract}
-            href={getNYTHref(uri)}
-            src={multimedia.find(({type})=>type===IMAGE_TYPE)?.url}
+            href={getNYTHref(url).href}
+            src={multimedia?.find(({type})=>type===IMAGE_TYPE)?.url}
           />
         )
       }

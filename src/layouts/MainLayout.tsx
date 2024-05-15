@@ -10,7 +10,7 @@ const openSans = Open_Sans({
 
 export const MainLayout:FC<PropsWithChildren> = ({ children }) => {
   return(
-    <div className={`flex flex-col w-full h-full overflow-auto bg-mainBackground ${openSans.className} font-sans`}>
+    <div className={`flex flex-col w-full overflow-auto bg-mainBackground ${openSans.className} font-sans`}>
       <Header/>
       <div className='flex flex-col flex-1 h-full'>
         {children}
