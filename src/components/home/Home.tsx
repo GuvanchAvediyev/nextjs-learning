@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Card } from "@/components/home/components/Card/Card";
 import { useTopStoriesQuery } from "@/api/nytimes/queries";
-import { getNYTHref } from "@/helpers/getNYTHref";
+import { getNYTHref } from "@/helpers/links";
 import { IMAGE_TYPE } from "@/components/home/constants";
 
 export const Home=()=>{
