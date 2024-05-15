@@ -3,9 +3,9 @@ import classNames from 'classnames'
 
 type Props= {
   open: boolean
-} & PropsWithChildren
+}
 
-export const Drawer:FC<Props>=({open, children})=>{
+export const Drawer:FC< PropsWithChildren<Props> >=({open, children})=>{
   return(
     <div
       className={classNames(

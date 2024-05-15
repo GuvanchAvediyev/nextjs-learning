@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import { Card } from "@/components/home/components/Card";
+import { Card } from "@/components/home/components/Card/Card";
 import { useTopStoriesQuery } from "@/api/nytimes/queries";
-import { getNYTHref } from "@/utils/getNYTHref";
+import { getNYTHref } from "@/helpers/getNYTHref";
 import { IMAGE_TYPE } from "@/components/home/constants";
 
 export const Home=()=>{
@@ -20,7 +20,6 @@ export const Home=()=>{
         data.map(({multimedia, published_date, title, section, abstract,uri })=>
           <Card
             key={title}
-            multimedia={multimedia}
             category={section}
             date={published_date}
             title={title}

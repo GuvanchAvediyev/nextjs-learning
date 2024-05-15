@@ -1,3 +1,3 @@
 export function getNYTHref(uri:string){
-  return uri.split('/').at(-1)
+  return uri.split('/').at(-1) ?? ''
 }

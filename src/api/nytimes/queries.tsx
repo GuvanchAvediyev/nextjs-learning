@@ -1,15 +1,14 @@
-import {QueryClient, useQuery} from "@tanstack/react-query";
-import {getTopStories} from "@/api/nytimes/module";
+import { useQuery } from "@tanstack/react-query";
+import { getTopStories } from "@/api/nytimes/module";
+import { queryClient } from "@/constants/query-client";
 
-export enum queryKeys{
+enum QueryKeys{
   TOP_STORIES
 }
 
 export async function prefetchTopStories(){
-  const queryClient = new QueryClient()
-
   await queryClient.prefetchQuery({
-    queryKey: [queryKeys.TOP_STORIES],
+    queryKey: [QueryKeys.TOP_STORIES],
     queryFn: getTopStories,
   })
 
@@ -20,7 +19,7 @@ export async function prefetchTopStories(){
 export function useTopStoriesQuery(){
   return useQuery(
     {
-    queryKey: [queryKeys.TOP_STORIES],
+    queryKey: [QueryKeys.TOP_STORIES],
     queryFn: getTopStories
   })
 }

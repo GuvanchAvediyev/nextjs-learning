@@ -6,7 +6,7 @@ export async function apiClient<TResponse>(url:string, requestInit?: RequestInit
   )
 
   if(response.ok){
-    return await response.json()
+    return await response.json() as TResponse
   }
   throw new Error('Something went wrong!');
 

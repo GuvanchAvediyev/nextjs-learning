@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
-import { DesktopNavbar } from '@/components/common/header/components/DesktopNavbar'
-import { Drawer } from '@/components/common/Drawer'
-import { CustomLink } from '@/components/common/CustomLink'
+import { DesktopNavbar } from "@/components/common/Header/components/DesktopNavbar/DesktopNavbar";
+import { Drawer } from '@/components/common/Drawer/Drawer'
+import { CustomLink } from '@/components/common/CustomLink/CustomLink'
 import { useBodyScrollLock } from "@/hooks/useBodyLock";
 import Logo from '@/assets/icons/logo.svg'
 import CrossIcon from '@/assets/icons/cross.svg'
 import BurgerIcon from '@/assets/icons/burger.svg'
-
 
 export const Header=()=>{
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -42,11 +41,11 @@ export const Header=()=>{
       </header>
       <Drawer open={isOpenModal}>
         <div className='flex flex-col gap-y-5'>
-          <CustomLink customClass='pb-1' href='/'>Home</CustomLink>
-          <CustomLink customClass='pb-1' href='/world'>World</CustomLink>
-          <CustomLink customClass='pb-1' href='/automobiles'>Automobiles</CustomLink>
-          <CustomLink customClass='pb-1' href='/real-estate'>Real Estates</CustomLink>
-          <CustomLink customClass='pb-1' href='/finance'>Finance</CustomLink>
+          <CustomLink className='pb-1' href='/'>Home</CustomLink>
+          <CustomLink className='pb-1' href='/world'>World</CustomLink>
+          <CustomLink className='pb-1' href='/automobiles'>Automobiles</CustomLink>
+          <CustomLink className='pb-1' href='/real-estate'>Real Estates</CustomLink>
+          <CustomLink className='pb-1' href='/finance'>Finance</CustomLink>
         </div>
       </Drawer>
     </>

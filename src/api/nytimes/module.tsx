@@ -1,9 +1,10 @@
-import {apiClient} from "@/helpers/apiClient";
-import {TTopStory} from "@/api/nytimes/types";
+import { apiClient } from "@/helpers/apiClient";
+import { TopStory } from "@/api/nytimes/types";
+import { BaseResponse } from "@/api/common/type";
 
 export async function getTopStories(){
   try {
-    const response = await apiClient<{results:TTopStory[]}>('home.json')
+    const response = await apiClient<BaseResponse<TopStory[]>>('home.json')
 
     return response.results
 

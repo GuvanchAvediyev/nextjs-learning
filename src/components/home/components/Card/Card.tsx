@@ -14,7 +14,6 @@ type Props={
 }
 
 export const Card:FC<Props>=({ category, title , description, date, src, href})=>{
-
   return (
     <div className={classNames(
       'grid grid-cols-1 max-h-auto relative group',
@@ -23,7 +22,8 @@ export const Card:FC<Props>=({ category, title , description, date, src, href})=
 
       <Link href={href} className='absolute w-full h-full z-1 block top-0 left-0'/>
       <div className={classNames(
-        'py-5 px-4 rounded-box-shadow flex justify-between flex-col group-hover:bg-deepWhite',
+        'py-5 px-4 rounded-box-shadow flex justify-between flex-col',
+        'group-hover:bg-deepWhite',
         'md:p-10'
       )}>
         <div>
