@@ -1,10 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { getTopStories } from "@/api/nytimes/module";
+import {getArticle, getTopStories} from "@/api/nytimes/module";
 import { queryClient } from "@/constants/query-client";
 
-enum QueryKeys{
-  TOP_STORIES
+export enum QueryKeys{
+  TOP_STORIES,
+  ARTICLE
 }
+
+export const articleQueryKey=QueryKeys.ARTICLE
 
 export async function prefetchTopStories(){
   await queryClient.prefetchQuery({
@@ -22,4 +25,30 @@ export function useTopStoriesQuery(){
     queryKey: [QueryKeys.TOP_STORIES],
     queryFn: getTopStories
   })
+}
+
+export async function prefetchArticle(article?:string){
+  if (article) {
+    try {
+      await queryClient.prefetchQuery({
+        queryKey: [QueryKeys.ARTICLE, article],
+        queryFn: () => getArticle(article),
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  return queryClient
+}
+
+
+
+export function useArticleQuery(article?: string){
+  return useQuery(
+    {
+      queryKey: [QueryKeys.ARTICLE, article],
+      queryFn: ()=> getArticle(article),
+      enabled:!!article
+    })
 }

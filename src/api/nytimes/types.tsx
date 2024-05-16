@@ -4,7 +4,8 @@ export type TopStory={
   abstract:string
   published_date:string
   multimedia:MultiMedia[]
-  uri:string
+  url:string
+  byline:string
 }
 
 type MultiMedia={

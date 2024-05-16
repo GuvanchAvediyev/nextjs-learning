@@ -19,7 +19,7 @@ export const Header=()=>{
   return(
     <>
       <header className={classNames(
-        'bottom-box-shadow flex justify-between items-center p-4 relative z-10',
+        'bottom-box-shadow flex justify-between items-center p-4 relative z-30',
         'md:px-20 md:py-0'
       )}>
 
@@ -41,11 +41,11 @@ export const Header=()=>{
       </header>
       <Drawer open={isOpenModal}>
         <div className='flex flex-col gap-y-5'>
-          <CustomLink className='pb-1' href='/'>Home</CustomLink>
-          <CustomLink className='pb-1' href='/world'>World</CustomLink>
-          <CustomLink className='pb-1' href='/automobiles'>Automobiles</CustomLink>
-          <CustomLink className='pb-1' href='/real-estate'>Real Estates</CustomLink>
-          <CustomLink className='pb-1' href='/finance'>Finance</CustomLink>
+          <CustomLink onClick={toggleMenu} className='pb-1' href='/'>Home</CustomLink>
+          <CustomLink onClick={toggleMenu} className='pb-1' href='/world'>World</CustomLink>
+          <CustomLink onClick={toggleMenu} className='pb-1' href='/automobiles'>Automobiles</CustomLink>
+          <CustomLink onClick={toggleMenu} className='pb-1' href='/real-estate'>Real Estates</CustomLink>
+          <CustomLink onClick={toggleMenu} className='pb-1' href='/finance'>Finance</CustomLink>
         </div>
       </Drawer>
     </>
